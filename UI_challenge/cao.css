@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.all{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+}
+.deer, .whale, .baboon, .fox{
+    width: 24.8%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.deer>img{
+    height: 100vh;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+.whale>img{
+    height: 100vh;
+    width: 100%;
+    cursor: pointer;
+}
+.baboon>img{
+    height: 100vh;
+    width: 100%;
+    cursor: pointer;
+}
+.fox>img{
+    height: 100vh;
+    width: 100%;
+    cursor: pointer;
+}
+.words{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    position: absolute;
+    color: white;
+    z-index: 2;
+   padding-left: 30px;
+   bottom: 2px;
+   gap: 15px;
+}
+.words>h3{
+    width: 90%;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 38px;
+    font-family: "Roboto Condensed", sans-serif;
+}
+.words>p{
+     font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 16.02px;
+}
+.more-info {
+    display: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #0096FF;
+    z-index: 1;
+}
+
+.words:hover::after {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 0;
+}
+
+.hovered img {
+    opacity: 0.1; 
+    transition: opacity 0.5s ease;
+}
+
+.hovered .more-info {
+    display: flex;
+}
+
+
+
+@media (max-width: 1286px) {
+    .words>h3{
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 1236px) {
+    .words>h3{
+        font-size: 25px;
+    }
+}
+
+@media (max-width:1075px) {
+    .words{
+        display:none;
+    }
+    .deer:hover, .whale:hover, .baboon:hover, .fox:hover {
+        position: relative;
+        z-index: 1;
+        background-color: rgba(128, 128, 128, 0.5);
+        backdrop-filter: blur(5px);
+    }
+    
+    .deer:hover img, .whale:hover img, .baboon:hover img, .fox:hover img {
+        opacity: 0.05;
+        transition: opacity 0.5s ease; 
+    }
+    .all{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        gap: 1px;
+    }
+}
